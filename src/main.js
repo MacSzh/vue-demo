@@ -7,6 +7,10 @@ import router from './router'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+// Vue.directive('focus',function (el) {
+//   el.focus()
+// })
+
 new Vue({
   el: '#app',
   router,

@@ -1,10 +1,11 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg | capitalize }}</h1>
     <br/>
     <router-link id="hello" to="/hello">点我</router-link>
     <br/>
     <input type="button" value="点我" @click="goo()"/>
+    <input type="button" value="自定义指令" @click="directivGo"/>
   </div>
 </template>
 <script>
@@ -28,8 +29,19 @@
     methods:{
       goo:function () {
         this.$router.push("/hello")
+      },
+      directivGo:function () {
+        this.$router.push("/custom")
+      }
+    },
+    filters: {
+      capitalize: function (value) {
+        if (!value) return ''
+        value = value.toString()
+        return value.charAt(0).toLowerCase() + value.slice(1)
       }
     }
+
   }
 </script>
 
