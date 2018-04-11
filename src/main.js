@@ -15,5 +15,11 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  beforeCreate(){
+      console.log('组件刚刚创建')
+  },
+  created(){
+      console.log('组件创建完成')
+  }
 })

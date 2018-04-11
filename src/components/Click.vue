@@ -3,6 +3,11 @@
     <h1>{{msg}}</h1>
     <input type="button" value="按钮" @click.stop="show()"/>
     <input/>
+    <ul>
+      <li v-for="(val,index) in list" :key="index">
+        {{val}} {{index}}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -23,7 +28,9 @@ v-on:click   ==  @click
     name: "hello",
     data() {
       return {
-        msg: "jjjj"
+        msg: "jjjj",
+        list:['red','green','white']
+
       }
     },
     methods: {
